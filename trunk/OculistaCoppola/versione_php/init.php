@@ -15,7 +15,6 @@
     <script src="js/menubar_function.js" type="text/javascript" ></script>
     <script src="js/galleria-1.2.3.min.js" type="text/javascript"></script>
     <script src="js/flickr_function.js" type="text/javascript"></script>
-   
 </head>
 <body>
 <div id="content_all">
@@ -25,12 +24,12 @@
         <div id="sottotitolo">Oculista - Avellino</div>
     </div>
     <ul class="lavaLampBottomStyle" id="tre">
-        <li><a href="index.php">Home</a></li>
-        <li><a href="biografia.php">Biografia</a></li>
-        <li><a href="immagini.php">Immagini</a></li>
-        <li><a href="video.php">Video</a></li>
-        <li><a href="contatti.php">Contatti</a></li>
-        <li><a href="dove_sono.php">Dove sono</a></li>
+        <li id="index.php"><a href="index.php">Home</a></li>
+        <li id="biografia.php"><a href="biografia.php">Biografia</a></li>
+        <li id="immagini.php"><a href="immagini.php">Immagini</a></li>
+        <li id="video.php"><a href="video.php">Video</a></li>
+        <li id="contatti.php"><a href="contatti.php">Contatti</a></li>
+        <li id="dove_sono.php"><a href="dove_sono.php">Dove sono</a></li>
     </ul>
     <div id="slideshow">
         <img src="img/slider/image1.jpg" alt="Slideshow Image 1" class="active" />
