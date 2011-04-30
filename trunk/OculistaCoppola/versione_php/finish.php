@@ -17,7 +17,6 @@
             nome_pagina=location.href;
             nome_pagina=nome_pagina.substr(nome_pagina.lastIndexOf("/")+1).split(/[?#]/)[0];
             $('li[id="'+nome_pagina+'"]').attr("class","current");
-            $('li[id="'+nome_pagina+'"]').removeAttr("id");
         </script>
     </body>
 </html>

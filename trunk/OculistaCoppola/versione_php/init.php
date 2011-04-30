@@ -13,8 +13,6 @@
     <script src="js/jquery.easing.min.js" type="text/javascript" ></script>
     <script src="js/slideshow_function.js" type="text/javascript" ></script>
     <script src="js/menubar_function.js" type="text/javascript" ></script>
-    <script src="js/galleria-1.2.3.min.js" type="text/javascript"></script>
-    <script src="js/flickr_function.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="content_all">
