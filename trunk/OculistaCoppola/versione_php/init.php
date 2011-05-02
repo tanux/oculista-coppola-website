@@ -1,4 +1,17 @@
 <?php
+$filter = ".jpg";
+$directory = "img/slider";
+@$d = dir($directory);
+if ($d) {
+  while($entry=$d->read()) {
+    $ps = strpos(strtolower($entry), $filter);
+    if (!($ps === false)) {
+      $items[] = $entry;
+    }
+  }
+  $d->close();
+  sort($items);
+}
 ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="keywords" lang="it" content="oculista,specialista,avellino,salvatore,coppola,dottore,oculistica" />
@@ -36,8 +49,13 @@
     </ul>
     <div id="slideshow">
         <img src="img/slider/image1.jpg" alt="Slideshow Image 1" class="active" />
-        <img src="img/slider/image2.jpg" alt="Slideshow Image 2" />
-        <img src="img/slider/image3.jpg" alt="Slideshow Image 3" />
+        <?php
+          for ($i=1; $i<sizeof($items); $i++){
+        ?>
+            <img src="img/slider/<?php echo $items[$i]?>"/>
+        <?php
+          }    
+        ?>
     </div>
 
 

@@ -39,16 +39,14 @@ $photosets = $flickr->photosets_getList($user_id);
               <div class="set" id="<?php echo $id_photoset?>">
                 <div class="bg_set" id="<?php echo $id_photoset?>" title="<?php echo $num_photos?>"></div>
                 <div class="thumbnail_content">
-                  <img class="thumbnail" id="<?php echo $id_photoset?>" src="<?php echo $url_photo?>" style="opacity:0.3"/>
+                  <img class="thumbnail"id="<?php echo $id_photoset?>" src="<?php echo $url_photo?>" style="opacity:0.3"/>
                 </div>
                 <div class="nome_album" id="<?php echo $id_photoset?>" >
                   <?php echo $nome_photoset?>
                 </div>
-                <!--
-                <div class="info_photoset" id="<?php //echo $id_photoset?>" title="Dettagli Album">
-                  <img id="<?php //echo $id_photoset?>" src="img/info.png" alt="Dettagli Album" style="width:16px; height:16px">
+                <div class="info_photoset" id="<?php echo $id_photoset?>" title="Dettagli Album">
+                  <img id="<?php echo $id_photoset?>" src="img/info.png" alt="Dettagli Album" style="width:16px; height:16px" rel="#<?php echo $id_photoset?>">
                 </div>
-                -->
               </div>
           <?php
             }
@@ -92,7 +90,6 @@ $photosets = $flickr->photosets_getList($user_id);
       $(document).ready(function(){
         var num_photos = 0;
         $('#close').hide();
-        /*
         $('.info_photoset').mouseover(function(){
           photoset_id = $(this).attr("id");
           $('#'+photoset_id+' img.thumbnail').css({opacity:1});
@@ -107,7 +104,6 @@ $photosets = $flickr->photosets_getList($user_id);
             height:'16px'
           },100);
         });
-        */
         $('.bg_set').mouseover(function(){
           photoset_id = $(this).attr("id");
           $('#'+photoset_id+' img.thumbnail').css({opacity:1});
