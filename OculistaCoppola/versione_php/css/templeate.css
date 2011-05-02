@@ -1,126 +1,189 @@
 body{
-    background-color:#e1f1ff;
-    background-image:url('../img/bg_parte_superiore.jpg');
-    background-attachment:fixed;
-    background-repeat:repeat-x;
-    margin-top:0;
-    margin-bottom:0;
+  background-color:#e1f1ff;
+  background-image:url('../img/bg_parte_superiore.jpg');
+  background-attachment:fixed;
+  background-repeat:repeat-x;
+  margin-top:0;
+  margin-bottom:0;
 }
 #sfondo_header{
-    background-repeat:no-repeat;
-    background-image:url('../img/occhio_spirale.png');
-    position:absolute;
-    width:1000px;
-    height:366px;
-    left:-40px;
-    margin-top:-20px
+  background-repeat:no-repeat;
+  background-image:url('../img/occhio_spirale.png');
+  position:absolute;
+  width:1000px;
+  height:366px;
+  left:-40px;
+  margin-top:-20px
 }
 #testo_header{
-    width:620px;
-    position:relative;
-    margin-top:20px;
-    left:30%;
+  width:910px;
+  position:relative;
+  margin-top:20px;
+  left:0%;
+  cursor:pointer;
+  text-align:right;
 }
 #titolo{
-    font-family: 'Reenie Beanie', arial, serif;
-    font-size:70px;
-    position:relative;
-    top:0px;
+  font-family: 'Reenie Beanie', arial, serif;
+  font-size:70px;
+  position:relative;
+  top:0px;
 }
 #sottotitolo{
-    font-family:arial;
-    font-size:18px;
-    width:170px;
-    font-style:italic;
-    position:relative;
-    top:35px;
-    left:70%;
+  font-family:arial;
+  font-size:18px;
+  width:170px;
+  font-style:italic;
+  position:relative;
+  top:35px;
+  left:70%;
 }
 #content_all{
-    position:relative;
-    margin-top:-15px;
-    margin:0 auto;
-    width:900px;
+  position:relative;
+  margin-top:-15px;
+  margin:0 auto;
+  width:900px;
+  z-index:1;
 }
 #titolo_pagina_corrente{
-    width:120px;
-    height:35px;
+  width:120px;
+  height:35px;
 }
 #testo_pagina_corrente{
-    margin-top:10px;
-    padding-bottom:70px;
-    width:860px;
-    font-family:Georgia;
-    font-size:10pt;
+  margin-top:10px;
+  padding-bottom:70px;
+  width:860px;
+  font-family:Georgia;
+  font-size:10pt;
 }
 div#testo_pagina_corrente td{
-    vertical-align:top;
-    padding-right:5px;
+  vertical-align:top;
+  padding-right:5px;
 }
 #sc_image{
-    position:relative;
-    top:0px;
-    left:355px;
-    width:219px;
-    height:79px;
-    background-image:url('../img/sc_image.png');
+  position:relative;
+  top:0px;
+  left:355px;
+  width:219px;
+  height:79px;
+  background-image:url('../img/sc_image.png');
 }
 #content_box_news{
-    position:absolute;
-    top:95px;
-    left:145px
+  position:absolute;
+  top:95px;
+  left:145px
 }
 #bottom_menubar{
-    padding-top:20px;
-    text-align:center;
-    font:12px arial;
+  padding-top:20px;
+  text-align:center;
+  font:12px arial;
 }
 #contenuto{
-    width:880px;
-    position:relative;
-    background-image:url('../img/bg.png');
-    left:-10px;
-    top:15px;
-    padding-top:30px;
-    padding-left:40px;
-    box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+  width:880px;
+  position:relative;
+  background-image:url('../img/bg.png');
+  left:-10px;
+  top:15px;
+  padding-top:30px;
+  padding-left:40px;
+  box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
+  z-index:-1;
 }
 #bottom{
-    width:900px;
-    height:90px;
-    position:relative;
-    margin-top:5px;
+  width:900px;
+  height:90px;
+  position:relative;
+  margin-top:5px;
 }
 .box_news{
-    width:271px;
-    height:178px;
-    background-image:url(../img/box_news.png);
+  width:271px;
+  height:178px;
+  background-image:url(../img/box_news.png);
 }
 #box_news_immagini{
-    position:absolute;
-    left:468px;
-    top:386px;
+  position:absolute;
+  left:468px;
+  top:386px;
 }
 #box_news_video{
-    position:absolute;
-    left:468px;
-    top:570px;
+  position:absolute;
+  left:468px;
+  top:570px;
 }
 .titolo_box_news{
-    position:absolute;
-    margin-top:10px;
-    font-family: 'Reenie Beanie', arial, serif;
-    font-size:28px;
-    margin-top:10px;
-    margin-left:65px;
+  position:absolute;
+  margin-top:10px;
+  font-family: 'Reenie Beanie', arial, serif;
+  font-size:28px;
+  margin-top:10px;
+  margin-left:65px;
 }
 .content_phoset{
-    background-image:url('../img/rullino.png');
-    width:188px;
-    height:191px;
-    cursor:pointer;
+  background-image:url('../img/rullino.png');
+  width:188px;
+  height:191px;
+  cursor:pointer;
 }
 td.content_phoset img{
-    width:177px;
-    height:120px;
+  width:177px;
+  height:120px;
+}
+.set{
+  float:left;
+  width:200px;
+  height:200px;
+  padding-right:15px;
+  padding-top:40px;
+}
+.bg_set{
+  background:url('../img/istantanea.png') no-repeat scroll 0 0 transparent;
+  width:202px;
+  height:211px;
+  z-index:1;
+  overflow:hidden;
+  cursor:pointer;
+}
+.thumbnail_content{
+  z-index:-1;
+  position:relative;
+  left:20px;
+  top:-191px;
+}
+.thumbnail{
+  width:171px;
+  height:146px;
+}
+
+/***  FabClearing ***/
+.cleared:after {
+  display: block;
+  visibility: hidden;
+  content: " ";
+  height: 0;
+  clear: both;
+}
+.cleared {
+  clear: both; /* per Gecko */
+  height: 1%; /* per IE */
+}
+.nome_album{
+  cursor:pointer;
+  position: relative;
+  z-index: 2;
+  top: -193px;
+  left: 16px;
+  width: 170px;
+  text-align: center;
+  font-family:'Reenie Beanie', arial, serif;
+  font-weight:bold;
+  font-size:20pt;
+}
+.info_photoset{
+  cursor:pointer;
+  position:relative;
+  z-index:2;
+  top:-215px;
+  left:174px;
+  width:16px;
+  height:16px;
 }

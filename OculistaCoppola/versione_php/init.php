@@ -13,6 +13,11 @@
     <script src="js/jquery.easing.min.js" type="text/javascript" ></script>
     <script src="js/slideshow_function.js" type="text/javascript" ></script>
     <script src="js/menubar_function.js" type="text/javascript" ></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#testo_header').click(function(){window.location.href = "index.php";});
+      });
+    </script>
 </head>
 <body>
 <div id="content_all">
