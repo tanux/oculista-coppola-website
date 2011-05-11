@@ -5,6 +5,7 @@ $secret = '84e7befb716ad97f';
 $user_id = '61365587@N08';
 $die_on_error = false;
 $flickr = new phpFlickr($api_key,$secret,$die_on_error);
+$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
 $photosets = $flickr->photosets_getList($user_id);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -25,16 +26,14 @@ $photosets = $flickr->photosets_getList($user_id);
           <?php
             foreach ($photosets['photoset'] as $photoset)
             {
+              $id_photoset = $photoset['id'];
               $nome_photoset = $photoset['title'];
               $num_photos = $photoset['photos'];
-              $id_photoset = $photoset['id'];
-              $photos = $flickr->photosets_getPhotos($id_photoset);
-              $photo = $photos['photoset']['photo']['0'];
-              $farm = $photo['farm'];
-              $server = $photo['server'];
-              $id = $photo['id'];
-              $secret = $photo['secret'];
-              $url_photo = 'http://farm'.$farm.'.static.flickr.com/'.$server.'/'.$id.'_'.$secret.'_m.jpg';
+              $farm = $photoset['farm'];
+              $server = $photoset['server'];
+              $id_primary = $photoset['primary'];
+              $secret = $photoset['secret'];
+              $url_photo = 'http://farm'.$farm.'.static.flickr.com/'.$server.'/'.$id_primary.'_'.$secret.'_m.jpg';
           ?>
               <div class="set" id="<?php echo $id_photoset?>">
                 <div class="bg_set" id="<?php echo $id_photoset?>" title="<?php echo $num_photos?>"></div>

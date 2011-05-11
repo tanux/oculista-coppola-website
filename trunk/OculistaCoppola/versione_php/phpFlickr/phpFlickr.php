@@ -86,16 +86,21 @@ if ( !class_exists('phpFlickr') ) {
 					 * If high performance is crucial, you can easily comment
 					 * out this query once you've created your database table.
 					 */
-					mysql_query("
+					if(!mysql_query("
 						CREATE TABLE IF NOT EXISTS `$table` (
 							`request` CHAR( 35 ) NOT NULL ,
 							`response` MEDIUMTEXT NOT NULL ,
 							`expiration` DATETIME NOT NULL ,
 							INDEX ( `request` )
-						) TYPE = MYISAM
-					", $db);
+						)", $db) )
+          {
+            die('Could not connect: ' . mysql_error());
+          }
 					
-					$result = mysql_query("SELECT COUNT(*) FROM $table", $db);
+					$result = mysql_query("SELECT COUNT(*) FROM $table");
+          if (!$result) {
+            die('Invalid query: ' . mysql_error());
+          }
 					$result = mysql_fetch_row($result);
 					if ( $result[0] > $this->max_cache_rows ) {
 						mysql_query("DELETE FROM $table WHERE expiration < DATE_SUB(NOW(), INTERVAL $cache_expire second)", $db);
@@ -292,6 +297,38 @@ if ( !class_exists('phpFlickr') ) {
 				$this->cache($args, $this->response);
 			}
 			
+			/*
+			 * Uncomment this line (and comment out the next one) if you're doing large queries
+			 * and you're concerned about time.  This will, however, change the structure of
+			 * the result, so be sure that you look at the results.
+			 */
+			//$this->parsed_response = unserialize($this->response);
+			$this->parsed_response = $this->clean_text_nodes(unserialize($this->response));
+			if ($this->parsed_response['stat'] == 'fail') {
+				if ($this->die_on_error) die("The Flickr API returned the following error: #{$this->parsed_response['code']} - {$this->parsed_response['message']}");
+				else {
+					$this->error_code = $this->parsed_response['code'];
+					$this->error_msg = $this->parsed_response['message'];
+					$this->parsed_response = false;
+				}
+			} else {
+				$this->error_code = false;
+				$this->error_msg = false;
+			}
+			return $this->response;
+		}
+    function request_noauth ($command, $args = array(), $nocache = false)
+		{
+			//Sends a request to Flickr's REST endpoint via POST.
+			if (substr($command,0,7) != "flickr.") {
+				$command = "flickr." . $command;
+			}
+			$args = array_merge(array("method" => $command, "format" => "php_serial", "api_key" => $this->api_key), $args);
+			$this->last_request = $args;
+			if (!($this->response = $this->getCached($args)) || $nocache) {
+				$this->response = $this->post($args);
+				$this->cache($args, $this->response);
+			}
 			/*
 			 * Uncomment this line (and comment out the next one) if you're doing large queries
 			 * and you're concerned about time.  This will, however, change the structure of
@@ -1324,7 +1361,7 @@ if ( !class_exists('phpFlickr') ) {
 
 		function photosets_getList ($user_id = NULL) {
 			/* http://www.flickr.com/services/api/flickr.photosets.getList.html */
-			$this->request("flickr.photosets.getList", array("user_id" => $user_id));
+			$this->request_noauth("flickr.photosets.getList", array("user_id" => $user_id));
 			return $this->parsed_response ? $this->parsed_response['photosets'] : false;
 		}
 
