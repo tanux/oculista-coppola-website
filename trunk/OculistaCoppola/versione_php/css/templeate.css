@@ -70,7 +70,7 @@ div#testo_pagina_corrente td{
 }
 #content_box_news{
   position:absolute;
-  top:95px;
+  top:150px;
   left:145px
 }
 #bottom_menubar{
@@ -118,6 +118,33 @@ div#testo_pagina_corrente td{
   margin-top:10px;
   margin-left:65px;
 }
+#wiki_thumbnail{
+  width:220px;
+  background-color:#F7F7F7;
+  border:1px solid #888888;
+  padding:3px;
+  text-align:center;
+}
+#content_galleria{
+  width:500px;
+  margin:0 auto;
+  padding:5px;
+  background-color:#f5f5f5;
+  display:none;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+#close_album{
+  z-index: 2;
+  position: absolute;
+  top: 82px;
+  left: 701px;
+  display:none;
+  width:20px;
+  height:20px;
+  background-image:url('../img/close.gif');
+  background-repeat:no-repeat;
+  cursor:pointer
+}
 .content_phoset{
   background-image:url('../img/rullino.png');
   width:188px;
@@ -143,6 +170,14 @@ td.content_phoset img{
   overflow:hidden;
   cursor:pointer;
 }
+
+.bg_set_video{
+  background:url('../img/rullino_ciak.png') no-repeat scroll 0 0 transparent;
+  width:232px;
+  height:212px;
+  z-index:1;
+  overflow:hidden;
+}
 .thumbnail_content{
   z-index:-1;
   position:relative;
@@ -153,7 +188,6 @@ td.content_phoset img{
   width:171px;
   height:146px;
 }
-
 /***  FabClearing ***/
 .cleared:after {
   display: block;
@@ -178,6 +212,22 @@ td.content_phoset img{
   font-weight:bold;
   font-size:20pt;
 }
+.nome_video{
+  position: relative;
+  z-index: 2;
+  top: -236px;
+  left: 10px;
+  width: 105px;
+  text-align: center;
+  font-family:'Reenie Beanie', arial, serif;
+  font-weight:bold;
+  font-size:12pt;
+  color:white;
+  -moz-transform:rotate(-15deg);
+  -webkit-transform:rotate(-15deg);
+  -o-transform:rotate(-15deg);
+  -ms-transform:rotate(-15deg);
+}
 .info_photoset{
   cursor:pointer;
   position:relative;
@@ -187,3 +237,44 @@ td.content_phoset img{
   width:16px;
   height:16px;
 }
+
+/*overlay*/
+/* the overlayed element */
+.apple_overlay .black{
+	/* initially overlay is hidden */
+	display:none;
+	/* growing background image */
+	background-image:url(http://static.flowplayer.org/tools/img/overlay/transparent.png);
+	/*
+		width after the growing animation finishes
+		height is automatically calculated
+	*/
+	width:300px;
+	/* some padding to layout nested elements nicely  */
+	padding:35px;
+	/* a little styling */
+	font-size:11px;
+  z-index:10000;
+}
+/* default close button positioned on upper right corner */
+.apple_overlay .close {
+	background-image:url(../img/apple-close.png);
+	position:absolute; right:5px; top:5px;
+	cursor:pointer;
+	height:28px;
+	width:28px;
+}
+div.apple_overlay h2 {
+  margin:10px 0 -9px 0;
+  font-weight:bold;
+  font-size:14px;
+}
+
+
+
+
+
+
+
+
+
