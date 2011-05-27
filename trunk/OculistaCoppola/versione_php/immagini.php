@@ -37,7 +37,7 @@ $photosets = $flickr->photosets_getList($user_id);
               <div class="set" id="<?php echo $id_photoset?>">
                 <div class="bg_set" id="<?php echo $id_photoset?>" title="<?php echo $num_photos?>"></div>
                 <div class="thumbnail_content">
-                  <img class="thumbnail"id="<?php echo $id_photoset?>" src="<?php echo $url_photo?>" style="opacity:0.3"/>
+                  <img class="thumbnail" id="<?php echo $id_photoset?>" src="<?php echo $url_photo?>" style="opacity:0.3"/>
                 </div>
                 <div class="nome_album" id="<?php echo $id_photoset?>" >
                   <?php echo $nome_photoset?>
@@ -47,8 +47,8 @@ $photosets = $flickr->photosets_getList($user_id);
             }
           ?>
         </div>
-        <div id="content_galleria" style="width:500px; margin:0 auto;padding:5px; background-color:#f5f5f5;display:none; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);">
-          <div id="close" style="z-index: 2; position: absolute; top: 82px; left: 701px;display:none; width:20px; height:20px; background-image:url('img/close.gif'); background-repeat:no-repeat; cursor:pointer" title="chiudi"></div>
+        <div id="content_galleria">
+          <div id="close_album" title="chiudi"></div>
           <div id="galleria"></div>
         </div>
       </div> <!-- Chiude id="testo_pagina_corrente" -->
@@ -70,21 +70,13 @@ $photosets = $flickr->photosets_getList($user_id);
           $('#galleria').galleria({
             width:500,
             height:500,
-            /*
-            extend: function(options) {
-                var gallery = this; // "this" is the gallery instance
-                $('#play').click(function() {
-                    //gallery.play(); // call the play method
-                });
-            },
-            */
             lightbox: true
           });
         });
       }
       $(document).ready(function(){
         var num_photos = 0;
-        $('#close').hide();
+        $('#close_album').hide();
         $('.bg_set').mouseover(function(){
           photoset_id = $(this).attr("id");
           $('#'+photoset_id+' img.thumbnail').css({opacity:1});
@@ -102,10 +94,10 @@ $photosets = $flickr->photosets_getList($user_id);
           id = $(this).attr('id');
           num_photos = $(this).attr('title');
           get_flickr_images(id);
-          $('#close').delay(1000).fadeIn();
+          $('#close_album').delay(1000).fadeIn();
           $('.cleared').fadeOut();
         });
-        $('#close').click(function(){
+        $('#close_album').click(function(){
           window.location.href = "immagini.php";
         });
       });
