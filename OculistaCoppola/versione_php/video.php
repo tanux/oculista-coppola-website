@@ -1,6 +1,5 @@
 <?php
 $feedURL = "http://gdata.youtube.com/feeds/api/videos?q=DottCoppolaVideo&key=AI39si6UrXS3Cqff8ehVvFhiXmx48Dpny4iAlR2B_FYVl4GEHrvznUQEI_NIgjhiGg93sjCzTjmC0KywrSyMIefh5BBiGfB3zg";
-//$feedURL =  'http://gdata.youtube.com/feeds/api/standardfeeds/most_viewed';
 $sxml = simplexml_load_file($feedURL);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
