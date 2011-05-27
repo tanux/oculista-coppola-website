@@ -5,14 +5,13 @@ $secret = '84e7befb716ad97f';
 $user_id = '61365587@N08';
 $die_on_error = false;
 $flickr = new phpFlickr($api_key,$secret,$die_on_error);
-$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
+//$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
 $photosets = $flickr->photosets_getList($user_id);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <script src="http://cdn.jquerytools.org/1.2.5/jquery.tools.min.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
         <title>Immagini | Dott.Salvatore Coppola - Oculista</title>
         <meta name="description" content="Immagini del Dott.Salvatore Coppola, oculista di avellino" />
@@ -43,16 +42,13 @@ $photosets = $flickr->photosets_getList($user_id);
                 <div class="nome_album" id="<?php echo $id_photoset?>" >
                   <?php echo $nome_photoset?>
                 </div>
-                <div class="info_photoset" id="<?php echo $id_photoset?>" title="Dettagli Album">
-                  <img id="<?php echo $id_photoset?>" src="img/info.png" alt="Dettagli Album" style="width:16px; height:16px" rel="#<?php echo $id_photoset?>">
-                </div>
               </div>
           <?php
             }
           ?>
         </div>
         <div id="content_galleria" style="width:500px; margin:0 auto;padding:5px; background-color:#f5f5f5;display:none; box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);">
-          <div id="close" style="z-index: 1; position: absolute; top: 82px; left: 701px;display:none; width:20px; height:20px; background-image:url('img/close.gif'); background-repeat:no-repeat; cursor:pointer" title="chiudi"></div>
+          <div id="close" style="z-index: 2; position: absolute; top: 82px; left: 701px;display:none; width:20px; height:20px; background-image:url('img/close.gif'); background-repeat:no-repeat; cursor:pointer" title="chiudi"></div>
           <div id="galleria"></div>
         </div>
       </div> <!-- Chiude id="testo_pagina_corrente" -->
@@ -89,20 +85,6 @@ $photosets = $flickr->photosets_getList($user_id);
       $(document).ready(function(){
         var num_photos = 0;
         $('#close').hide();
-        $('.info_photoset').mouseover(function(){
-          photoset_id = $(this).attr("id");
-          $('#'+photoset_id+' img.thumbnail').css({opacity:1});
-          $('#'+photoset_id+' .info_photoset img').animate({
-            width:'24px',
-            height:'24px'
-          },100);
-        }).mouseleave(function(){
-          $('#'+photoset_id+' img.thumbnail').css({opacity:0.3});
-          $('#'+photoset_id+' .info_photoset img').animate({
-            width:'16px',
-            height:'16px'
-          },100);
-        });
         $('.bg_set').mouseover(function(){
           photoset_id = $(this).attr("id");
           $('#'+photoset_id+' img.thumbnail').css({opacity:1});

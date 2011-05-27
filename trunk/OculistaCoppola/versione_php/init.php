@@ -22,6 +22,7 @@ if ($d) {
     <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css' media="screen">
     <link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
+    <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
     <script src="js/jquery.lavalamp.min.js" type="text/javascript" ></script>
     <script src="js/jquery.easing.min.js" type="text/javascript" ></script>
     <script src="js/slideshow_function.js" type="text/javascript" ></script>
