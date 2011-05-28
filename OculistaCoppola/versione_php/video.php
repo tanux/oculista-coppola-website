@@ -43,7 +43,7 @@ $sxml = simplexml_load_file($feedURL);
               $attrs = $media->group->thumbnail[0]->attributes();
               $thumbnail = $attrs['url'];
           ?>
-              <div class="set" style="padding-right:85px; font-size:12pt;">
+              <div class="set_video" style="padding-right:85px; font-size:12pt;">
                 <div class="bg_set_video"></div>
                 <div class="thumbnail_content" style="left:48px">
                   <img class="thumbnail" src="<?php echo $thumbnail?>" style="width:176px" />
