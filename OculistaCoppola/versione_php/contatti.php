@@ -43,7 +43,59 @@
                     <td>oculistacoppola@yahoo.it</td>
                 </tr>
             </table>
-
+            <br>Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: <br>
+            
+            <form action="invio_dati.php" method="post">
+                <table width=450 border=0 cellpadding=2 cellspacing=2 bgcolor="">
+                    <tr valign=top>
+                        <td colspan=3><div align=left><br>
+                    <tr valign=top>
+                    <td align=right width=120 ><div align=left>Nome</div></td>
+                        <td width=400>
+                            <input name="nome" id="nome" type="text" size=30>
+                        </td>
+                    </tr>
+                    <tr valign=top>
+                        <td ><div align=left>Cognome</div></td>
+                        <td ><input name="cognome"  type="text" id="cognome" size=30></td>
+                    </tr>
+                    <tr valign=top>
+                        <td ><div align=left>Indirizzo</div></td>
+                        <td ><input name=indirizzo type=text id=indirizzo size=30></td>
+                    </tr>
+                    <tr valign=top>
+                        <td ><div align=left>Città</div></td>
+                        <td>
+                            <input name=citta  type=text id=citta size=30 >
+                        </td>
+                    </tr>
+                    <tr valign=top>
+                        <td><div align=left>CAP</div></td>
+                        <td ><input name=cap type=text id=cap size=30></td>
+                    </tr>
+                    <tr valign=top>
+                        <td><div align=left>Telefono</div></td>
+                        <td><input name=tel type=text id=tel size=30></td>
+                    </tr>
+                    <tr valign=top>
+                        <td><div align=left>E-mail:</div></td>
+                        <td class=copyright><input name=email  type=text size=30></td>
+                    </tr>
+                    <tr valign=top>
+                        <td colspan=2 >&nbsp;</td>
+                    </tr>
+                    <tr valign=top>
+                        <td colspan=2 >
+                            <div align=left>Richiesta<br>
+                                <textarea name=richiesta cols=50 rows=5 wrap=hard id=richiesta></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr valign=top>
+                        <td colspan=2 align=center><input type=submit class=button name=Invia value=Invia></td>
+                    </tr>
+                </table>
+            </form>
         </div>
         <div id="sc_image"></div>
     </div>
