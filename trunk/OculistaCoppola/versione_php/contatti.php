@@ -11,7 +11,7 @@
             <img src="img/contatti.png" />
         </div>
         <div id="testo_pagina_corrente" style="width:860px">
-            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio n°1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
+            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio nï¿½1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
             </br>
             <table>
                 <tr>
