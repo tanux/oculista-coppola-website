@@ -11,7 +11,39 @@
             <img src="img/contatti.png" />
         </div>
         <div id="testo_pagina_corrente" style="width:860px">
-            
+            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio n°1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
+            </br>
+            <table>
+                <tr>
+                    <td>
+                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                    </td>
+                    <td width="40%">Studio</td>
+                    <td>0825 22641</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                    </td>
+                    <td width="35%">Cellulare (Tre)</td>
+                    <td>3356298388</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                    </td>
+                    <td width="40%">Cellulare (Wind)</td>
+                    <td>3293036057</td>
+                </tr>
+                <tr>
+                    <td>
+                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                    </td>
+                    <td width="40%">E-mail</td>
+                    <td>oculistacoppola@yahoo.it</td>
+                </tr>
+            </table>
+
         </div>
         <div id="sc_image"></div>
     </div>
