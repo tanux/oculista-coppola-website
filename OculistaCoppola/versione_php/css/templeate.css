@@ -53,8 +53,9 @@ body{
   margin-top:10px;
   padding-bottom:70px;
   width:860px;
-  font-family:Georgia;
-  font-size:10pt;
+  font-family:Verdana;
+  font-size:12px;
+  line-height:22px;
 }
 div#testo_pagina_corrente td{
   vertical-align:top;
