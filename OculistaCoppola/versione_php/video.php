@@ -79,7 +79,7 @@ $sxml = simplexml_load_file($feedURL);
           showTitle: true,
           allowresize: true,
           counter_separator_label: ' di ',
-          theme: 'light_square',
+          theme: 'facebook',
           callback: function(){}
         });
       });

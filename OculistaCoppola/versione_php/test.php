@@ -7,6 +7,8 @@ $die_on_error = false;
 $flickr = new phpFlickr($api_key,$secret,$die_on_error);
 //$flickr->enableCache("db", "mysql://root:20tanux20@127.0.0.1/flickr");
 $photosets = $flickr->photosets_getList($user_id);
+print_r($photosets);
+exit;
 
 
 foreach ($photosets['photoset'] as $photoset)
