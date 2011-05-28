@@ -30,5 +30,5 @@ function slideSwitch() {
     });
 }
 $(function() {
-    setInterval( "slideSwitch()", 4000 );
+    setInterval( "slideSwitch()", 2500 );
 });
