@@ -286,6 +286,7 @@ input.testo_input{
   height:37px;
   font-size:10pt;
   padding-left:10px;
+  color:#999999;
 }
 .input_text{
   background:none repeat scroll 0 0;
@@ -300,7 +301,7 @@ input.testo_input{
   padding-left:3px;
   margin-bottom:15px;
 }
-#testo_messaggio{
+.testo_messaggio{
   width:300px;
   height:100px;
   border:none;
@@ -309,6 +310,7 @@ input.testo_input{
   font-family:Verdana;
   padding-left:10px;
   padding-top:1px;
+  color:#999999;
 }
 
 

@@ -45,26 +45,36 @@
             </table>
             <p> Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: </p>
             <form action="invio_dati.php" method="post">
+              <label>Nome e Cognome</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="nome" value="Nome e Cognome">
+                <input class="testo_input" type="text" id="nome" value="Es: Mario Rossi" title="Es: Mario Rossi">
               </div>
+              <label>Recapito Telefonico</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="telefono" value="Recapito Telefonico">
+                <input class="testo_input" type="text" id="telefono" value="Es: 081-1234567" title="Es: 081-1234567">
               </div>
+               <label>Indirizzo</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="Citta" value="Città">
+                <input class="testo_input" type="text" id="indirizzo" value="Es: Via/Piazza Cristoforo Colombo, 12" title="Es: Via/Piazza Cristoforo Colombo, 12">
               </div>
+              <label>Citt&agrave;</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="Indirizzo" value="Indirizzo">
+                <input class="testo_input" type="text" id="citta" value="Es: Nocera Inferiore" title="Es: Nocera Inferiore">
               </div>
+              <label>Provincia</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="email" value="Email">
+                <input class="testo_input" type="text" id="provincia" value="Es: Salerno" title="Es: Salerno">
               </div>
+              <label>Email</label>
+              <div class="input_text">
+                <input class="testo_input" type="text" id="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it">
+              </div>
+              <label>Messaggio</label>
               <div class="input_text" style="height:105px">
-                <textarea id="testo_messaggio">Scrivere qui il proprio messaggio...</textarea>
+                <textarea class="testo_messaggio" id="messaggio" title="Scrivere qui il proprio messaggio...">Scrivere qui il proprio messaggio...</textarea>
               </div>
               <div>
-                <input id="consenso" type="checkbox" style="margin:0px">
+                <input id="consenso" type="checkbox" style="margin:0px;">
                 Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a>
               </div>
               <input type="submit" value="Invia"/>
@@ -73,4 +83,49 @@
         </div>
         <div id="sc_image"></div>
     </div>
+    <script type="text/javascript" charset="utf-8">
+      function switchText()
+      {
+        if ($(this).val() == $(this).attr('title'))
+        {
+          $(this).val('').addClass('testo_input');
+          $(this).css({background:'#FFFFCC'});
+          $(this).parent().css({background:'#FFFFCC'});
+          $(this).css({color:'#000000'});
+        }
+        else if ($.trim($(this).val()) == '')
+        {
+          $(this).addClass('testo_input').val($(this).attr('title'));
+          $(this).css({background:'#FFFFFF'});
+          $(this).parent().css({background:'#FFFFFF'});
+          $(this).css({color:'#999999'});
+        }          
+      }
+      function switchTextArea()
+      {
+        if ($(this).val() == $(this).attr('title'))
+        {
+          $(this).val('').addClass('testo_messaggio');
+          $(this).css({background:'#FFFFCC'});
+          $(this).parent().css({background:'#FFFFCC'});
+          $(this).css({color:'#000000'});
+        }
+        else if ($.trim($(this).val()) == '')
+        {
+          $(this).addClass('testo_messaggio').val($(this).attr('title'));
+          $(this).css({background:'#FFFFFF'});
+          $(this).parent().css({background:'#FFFFFF'});
+          $(this).css({color:'#999999'});
+        }
+
+      }
+      $('input[type=text][title!=""]').each(function() {
+        if ($.trim($(this).val()) == '') $(this).val($(this).attr('title'));
+        if ($(this).val() == $(this).attr('title')) $(this).addClass('testo_input');
+      }).focus(switchText).blur(switchText);
+      $('textarea[title!=""]').each(function() {
+        if ($.trim($(this).val()) == '') $(this).val($(this).attr('title'));
+        if ($(this).val() == $(this).attr('title')) $(this).addClass('testo_messaggio');
+      }).focus(switchTextArea).blur(switchTextArea);
+    </script>
 <?php  require_once 'finish.php'?>
