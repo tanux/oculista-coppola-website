@@ -1,4 +1,5 @@
 <?php
+require_once('youtube.php');
 $feedURL = "http://gdata.youtube.com/feeds/api/videos?q=DottCoppolaVideo&key=AI39si6UrXS3Cqff8ehVvFhiXmx48Dpny4iAlR2B_FYVl4GEHrvznUQEI_NIgjhiGg93sjCzTjmC0KywrSyMIefh5BBiGfB3zg";
 $sxml = simplexml_load_file($feedURL);
 ?>
@@ -33,28 +34,31 @@ $sxml = simplexml_load_file($feedURL);
           <?php            
             foreach ($sxml->entry as $entry)
             {
-              // get nodes in media: namespace for media information
-              $media = $entry->children('http://search.yahoo.com/mrss/');
-              $nome_photoset = $media->group->title;
               // get video player URL
+              $media = $entry->children('http://search.yahoo.com/mrss/');
               $attrs = $media->group->player->attributes();
-              $url_video = $attrs['url'];
-              // get video thumbnail
-              $attrs = $media->group->thumbnail[0]->attributes();
-              $thumbnail = $attrs['url'];
-          ?>
+              $url = $attrs['url'];
+              $video = YoutubeDataApi::getVideoResponse($url);
+              $titolo = $video->getTitle();
+              $thumbnails = $video->getThumbnails();
+              $thumbnail = $thumbnails[0]['url'];
+              $descrizione = $video->getDescription();
+
+              ?>
               <div class="set_video" style="padding-right:85px; font-size:12pt;">
                 <div class="bg_set_video"></div>
                 <div class="thumbnail_content" style="left:48px">
                   <img class="thumbnail" src="<?php echo $thumbnail?>" style="width:176px" />
                 </div>
-                <div class="gallery clearfix" style="position:relative; z-index:2; -moz-transform:rotate(-17deg); -webkit-transform:rotate(-17deg); -o-transform:rotate(-17deg); -ms-transform:rotate(-17deg); top:-209px; left:55px; font-family:'Reenie Beanie',arial,serif">
-                  <a class="play_link" rel="prettyPhoto" href="<?php echo $url_video ?>">
+                <div class="gallery clearfix" style="color:black; position:relative; z-index:2; -moz-transform:rotate(-17deg); -webkit-transform:rotate(-17deg); -o-transform:rotate(-17deg); -ms-transform:rotate(-17deg); top:-260px; left:39px; font-family:'Reenie Beanie',arial,serif; font-size:17pt">
+                  <a class="play_link" rel="prettyPhoto" href="<?php echo $url ?>">
                     PLAY
                   </a>
                 </div>
-                <div class="nome_video">
-                  <?php echo $nome_photoset?>
+                <div class="info_album" style="font-family:Verdana; font-size:10px; width:180px; position:relative; top:-388px; left:240px">
+                  <div class="nome" style="font-weight:bold; font-size:12px"><?php echo $titolo?></div>
+                  <hr />
+                  <div class="descrizione"><?php echo $descrizione?></div>
                 </div>
               </div>
           <?php

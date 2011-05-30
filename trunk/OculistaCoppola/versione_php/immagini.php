@@ -20,7 +20,7 @@ $photosets = $flickr->photosets_getList($user_id);
       <div id="titolo_pagina_corrente">
         <img src="img/immagini.png" />
       </div>
-      <div id="testo_pagina_corrente">
+      <div id="testo_pagina_corrente" style="padding-bottom:35px">
         <div class="cleared">
           <?php
             foreach ($photosets['photoset'] as $photoset)
@@ -49,7 +49,6 @@ $photosets = $flickr->photosets_getList($user_id);
                   <div class="data">Data creazione:<?php echo $photoset['date_create']?> </div>
                   <div class="num_foto">Foto:<?php echo $photoset['photos']?></div>
                 </div>
-
               </div>
           <?php
             }
