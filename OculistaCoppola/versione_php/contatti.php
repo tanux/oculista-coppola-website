@@ -12,7 +12,8 @@
             <img src="img/contatti.png" />
         </div>
         <div id="testo_pagina_corrente" style="width:860px">
-            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio n�1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
+            <p>Questa pagina ti offre la possibilit&agrave;</p>
+            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio n.1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
             </br>
             <table>
                 <tr>
@@ -55,15 +56,11 @@
               </div>
               <label class="label_contatti">Cognome *</label>
               <div class="input_text">
-                <input class="validate[required,custom[onlyLetterSp],funcCall[checkin]] testo_input" type="text" id="cognome" name="cognome" value="Es: Rossi" title="Es: Rossi" />
+                <input class="validate[required,custom[onlyLetterSp],funcCall[checkin],maxSize[10]] testo_input" type="text" id="cognome" name="cognome" value="Es: Rossi" title="Es: Rossi" />
               </div>
-              <label class="label_contatti">Recapito Telefonico (fisso) *</label>
+              <label class="label_contatti">Recapito Telefonico (fisso o cellulare) *</label>
               <div class="input_text">
-                <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" value="Es: 0811234567" title="Es: 0811234567" />
-              </div>
-              <label class="label_contatti">Recapito Telefonico (cellulare)</label>
-              <div class="input_text">
-                <input class="validate[custom[italian_cellphone]] testo_input" type="text" id="cellulare" value="Es:33912345678" title="Es:33912345678" />
+                <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" value="Es: 0811234567 o 33912345678" title="Es: 0811234567 o 33912345678" />
               </div>
               <label class="label_contatti">Email</label>
               <div class="input_text">
@@ -78,7 +75,7 @@
                 <span>Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a></span>
               </label>
               <br />
-              <input class="submit" type="submit" value="Invia" />
+              <input type="submit" value="Invia" />
               <input type="reset" value="Cancella"/>
             </form>
         </div>
@@ -87,9 +84,18 @@
     <script src="form_validator/js/language/jquery.validationEngine-it.js" type="text/javascript" charset="utf-8"></script>
     <script src="form_validator/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
-      jQuery(document).ready(function(){
-        jQuery("#formID").validationEngine();
+      $(document).ready(function(){
+        $("#formID").validationEngine({
+                onAjaxFormComplete: ajaxValidationCallback
+        });
       });
+      function ajaxValidationCallback(status, form, json, options){
+        if (window.console)
+          console.log(status);
+        if (status === true) {
+          alert("the form is valid!");
+        }
+      }
       function checkin(field, rules, i, options){
         if (field.val() == field.attr('title')) {
           return options.allrules.required.alertText;
