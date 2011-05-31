@@ -3,6 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <link rel="stylesheet" href="form_validator/css/validationEngine.jquery.css" type="text/css"/>
         <title>Contatti | Dott.Salvatore Coppola - Oculista</title>
         <meta name="description" content="Informazioni per contattare il Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
@@ -43,47 +44,62 @@
                     <td>oculistacoppola@yahoo.it</td>
                 </tr>
             </table>
-            <p> Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: </p>
-            <form action="invio_dati.php" method="post">
-              <label>Nome e Cognome</label>
+            <p>
+              Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: <br />
+              <span style="font-style:italic; font-size:11px">* Indica che il campo è obbligatorio</span>
+            </p>
+            <form id="formID" action="" method="post">
+              <label class="label_contatti">Nome *</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="nome" value="Es: Mario Rossi" title="Es: Mario Rossi">
+                <input class="validate[required,custom[onlyLetterSp],funcCall[checkin]] testo_input" type="text" id="nome" name="nome" value="Es: Mario" title="Es: Mario" />
               </div>
-              <label>Recapito Telefonico</label>
+              <label class="label_contatti">Cognome *</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="telefono" value="Es: 081-1234567" title="Es: 081-1234567">
+                <input class="validate[required,custom[onlyLetterSp],funcCall[checkin]] testo_input" type="text" id="cognome" name="cognome" value="Es: Rossi" title="Es: Rossi" />
               </div>
-               <label>Indirizzo</label>
+              <label class="label_contatti">Recapito Telefonico (fisso) *</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="indirizzo" value="Es: Via/Piazza Cristoforo Colombo, 12" title="Es: Via/Piazza Cristoforo Colombo, 12">
+                <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" value="Es: 0811234567" title="Es: 0811234567" />
               </div>
-              <label>Citt&agrave;</label>
+              <label class="label_contatti">Recapito Telefonico (cellulare)</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="citta" value="Es: Nocera Inferiore" title="Es: Nocera Inferiore">
+                <input class="validate[custom[italian_cellphone]] testo_input" type="text" id="cellulare" value="Es:33912345678" title="Es:33912345678" />
               </div>
-              <label>Provincia</label>
+              <label class="label_contatti">Email</label>
               <div class="input_text">
-                <input class="testo_input" type="text" id="provincia" value="Es: Salerno" title="Es: Salerno">
+                <input class="validate[custom[email],funcCall[checkin]] testo_input" type="text" id="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it" />
               </div>
-              <label>Email</label>
-              <div class="input_text">
-                <input class="testo_input" type="text" id="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it">
-              </div>
-              <label>Messaggio</label>
+              <label class="label_contatti">Messaggio *</label>
               <div class="input_text" style="height:105px">
-                <textarea class="testo_messaggio" id="messaggio" title="Scrivere qui il proprio messaggio...">Scrivere qui il proprio messaggio...</textarea>
+                <textarea class="validate[required,funcCall[checkin]] testo_messaggio" id="messaggio" title="Scrivere qui il proprio messaggio...">Scrivere qui il proprio messaggio...</textarea>
               </div>
-              <div>
-                <input id="consenso" type="checkbox" style="margin:0px;">
-                Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a>
-              </div>
-              <input type="submit" value="Invia"/>
+              <label>
+                <input class="validate[required,funcCall[checked]]" type="checkbox" id="consenso" name="consenso" style="display:inline;" />
+                <span>Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a></span>
+              </label>
+              <br />
+              <input class="submit" type="submit" value="Invia" />
               <input type="reset" value="Cancella"/>
             </form>
         </div>
         <div id="sc_image"></div>
     </div>
+    <script src="form_validator/js/language/jquery.validationEngine-it.js" type="text/javascript" charset="utf-8"></script>
+    <script src="form_validator/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript" charset="utf-8">
+      jQuery(document).ready(function(){
+        jQuery("#formID").validationEngine();
+      });
+      function checkin(field, rules, i, options){
+        if (field.val() == field.attr('title')) {
+          return options.allrules.required.alertText;
+        }
+      }
+      function checked(field, rules, i, options){
+        if (!field.attr('checked')) {
+          return options.allrules.required.alertText;
+        }
+      }
       function switchText()
       {
         if ($(this).val() == $(this).attr('title'))
@@ -117,7 +133,6 @@
           $(this).parent().css({background:'#FFFFFF'});
           $(this).css({color:'#999999'});
         }
-
       }
       $('input[type=text][title!=""]').each(function() {
         if ($.trim($(this).val()) == '') $(this).val($(this).attr('title'));

@@ -312,7 +312,18 @@ input.testo_input{
   padding-top:1px;
   color:#999999;
 }
+.submit {
+	border: 1px solid #AAA;
+	padding: 4px;
+	margin-top: 20px;
+	float: right;
+	text-decoration: none;
+	cursor: pointer;
+}
 
+.label_contatti{
+  font-weight:bold;
+}
 
 
 
