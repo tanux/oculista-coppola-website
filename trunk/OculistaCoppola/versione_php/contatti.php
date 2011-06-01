@@ -12,34 +12,67 @@
             <img src="img/contatti.png" />
         </div>
         <div id="testo_pagina_corrente" style="width:860px">
-            <p>Questa pagina ti offre la possibilit&agrave;</p>
-            Il Dottor Salvatore Coppola si trova ad Avellino, Contrada Sant'Eustachio n.1 (vicino campo sportivo), e <b>riceve per appuntamento</b></br>
-            </br>
+            <p>Il Dott.Coppola  <b>riceve per appuntamento</b>.</p>
+            <br \>
+            <div class="input_text" style="width:auto; height:auto;">
+              <table>
+                <tr>
+                  <td>
+                    <img src="img/homejob.png" alt="Indirizzo Studio" /> Indirizzo Studio
+                  </td>
+                  <td>Contrada Sant'Eustacchio n.1, Avellino 83100</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="img/phone_studio.png" alt="Telefono Studio" /> Telefono Studio
+                  </td>
+                  <td>0825/22641</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="img/cellphone.png" alt="Cellulare" /> Cellulare (Tre)
+                  </td>
+                  <td>3356298388</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="img/cellphone.png" alt="Cellulare" /> Cellulare (Wind)
+                  </td>
+                  <td>3293036057</td>
+                </tr>
+                <tr>
+                  <td>
+                    <img src="img/at.png" alt="Email" /> Email
+                  </td>
+                  <td>oculistacoppola@yahoo.it</td>
+                </tr>
+              </table>
+            </div>
             <table>
                 <tr>
                     <td>
-                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
                     </td>
                     <td width="40%">Studio</td>
                     <td>0825 22641</td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
                     </td>
                     <td width="35%">Cellulare (Tre)</td>
                     <td>3356298388</td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
                     </td>
                     <td width="40%">Cellulare (Wind)</td>
                     <td>3293036057</td>
                 </tr>
                 <tr>
                     <td>
-                        <img src="img/logo.jpg" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
+                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
                     </td>
                     <td width="40%">E-mail</td>
                     <td>oculistacoppola@yahoo.it</td>
