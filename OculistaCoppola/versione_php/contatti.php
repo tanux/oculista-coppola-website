@@ -49,7 +49,7 @@
               Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: <br />
               <span style="font-style:italic; font-size:11px">* Indica che il campo è obbligatorio</span>
             </p>
-            <form id="formID" action="" method="post">
+            <form id="formID" action="form_validator/ajax_submit.php" method="get">
               <label class="label_contatti">Nome *</label>
               <div class="input_text">
                 <input class="validate[required,custom[onlyLetterSp],funcCall[checkin]] testo_input" type="text" id="nome" name="nome" value="Es: Mario" title="Es: Mario" />
@@ -60,23 +60,28 @@
               </div>
               <label class="label_contatti">Recapito Telefonico (fisso o cellulare) *</label>
               <div class="input_text">
-                <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" value="Es: 0811234567 o 33912345678" title="Es: 0811234567 o 33912345678" />
+                <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" name="telefono" value="Es: 0811234567 o 33912345678" title="Es: 0811234567 o 33912345678" />
               </div>
               <label class="label_contatti">Email</label>
               <div class="input_text">
-                <input class="validate[custom[email],funcCall[checkin]] testo_input" type="text" id="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it" />
+                <input class="validate[custom[email],funcCall[checkin]] testo_input" type="text" id="email" name="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it" />
               </div>
               <label class="label_contatti">Messaggio *</label>
               <div class="input_text" style="height:105px">
-                <textarea class="validate[required,funcCall[checkin]] testo_messaggio" id="messaggio" title="Scrivere qui il proprio messaggio...">Scrivere qui il proprio messaggio...</textarea>
+                <textarea class="validate[required,funcCall[checkin]] testo_messaggio" id="messaggio" name="messaggio" title="Scrivere qui il proprio messaggio...">Scrivere qui il proprio messaggio...</textarea>
               </div>
               <label>
                 <input class="validate[required,funcCall[checked]]" type="checkbox" id="consenso" name="consenso" style="display:inline;" />
                 <span>Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a></span>
               </label>
               <br />
-              <input type="submit" value="Invia" />
-              <input type="reset" value="Cancella"/>
+              <input class="button" type="submit" value="Invia" />
+              <input class="button" type="button" value="Cancella" onclick="reset_field()"/>
+              <img id="waitgif" src="img/loader_contatti.gif" alt="Attesa risposta" style="display:none;" />
+              <span id="positive_response" style="display:none;">
+                <img src="img/ok_32x32.png" alt="Messaggio inviato" />
+                Il messaggio è stato inviato correttamente.
+              <span>
             </form>
         </div>
         <div id="sc_image"></div>
@@ -86,15 +91,27 @@
     <script type="text/javascript" charset="utf-8">
       $(document).ready(function(){
         $("#formID").validationEngine({
-                onAjaxFormComplete: ajaxValidationCallback
+          ajaxFormValidation: true,
+          onBeforeAjaxFormValidation:waitResponse,
+          onAjaxFormComplete: ajaxValidationCallback
         });
       });
+      function waitResponse(form, options){
+        if (window.console)
+          console.log("Attendi...");
+        $('#waitgif').show();
+        return true;
+      }
       function ajaxValidationCallback(status, form, json, options){
         if (window.console)
-          console.log(status);
+          console.log("Inviata!");
         if (status === true) {
-          alert("the form is valid!");
+          $('#waitgif').hide();
+          $('#positive_response').show();
         }
+      }
+      function reset_field(){
+        window.location.href = "contatti.php";
       }
       function checkin(field, rules, i, options){
         if (field.val() == field.attr('title')) {
