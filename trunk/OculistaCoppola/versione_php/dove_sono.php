@@ -3,6 +3,8 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
         <script type="text/javascript" src="js/googlemaps.js"></script>
         <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRJPr4OMGDUGsod9sPZI3M-yok19hRLVJAtVPmSr3Kfx0_6Jg862MkRaQ" type="text/javascript"></script>
         <script type="text/javascript">
@@ -22,35 +24,44 @@
         <meta name="description" content="Informazioni per raggiungere lo studio del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-        <div id="titolo_pagina_corrente">
-            <img src="img/dovesono.png" />
-        </div>
-        <div id="testo_pagina_corrente" style="width:97%">
-          <form action='#mappa' onSubmit='showDirection(); return false;'>
-            <td><input type='hidden' id='fd_stato' value="Italia" /></td>
-            <div style="padding-top:10px;">Inserire i dati di provenienza:</div>
-            <div style="padding:10px;">
+      <div class="titolo_pagina_corrente" style="background-image:url('img/dove_sono.png')"></div>
+      <br />
+      <div id="testo_pagina_corrente" style="width:97%">
+        <span style="font-weight:bold;">Sede dello Studio:</span> Contrada Sant'Eustacchio, n.1 - 83100, Avellino
+        <br /><br />
+        <div id="mappa" style="width:90%;height:400px;margin:0 auto; margin-bottom:10px"></div>
+        <br />
+        <div class="titolo_pagina_corrente" style="background-image:url('img/dove_sono.png'); background-position:0px -35px"></div>
+        <br />
+        <form id="dati_provenienza" action='#mappa' onSubmit='showDirection(); return false;'>
+          <div id="box_itinerario" style="background-image:url('img/bg_itinerario.jpg'); width:748px; height:236px; margin:0 auto;">
+            <input type='hidden' id='fd_stato' value="Italia" />
+            <span id="titolo_itinerario" style="font-size:26pt;font-family: 'Swanky and Moo Moo', arial, serif; position:relative; top:10px; left:230px;">Calcola il tuo itinerario</span>
+            <span id="sottotitolo_itinerario" style="font-size:20pt;font-family: 'Swanky and Moo Moo', arial, serif; position:relative; top:40px; left:-290px;">Inserire i dati di provenienza</span>
+            <div style="position:relative; top:50px; left:80px; width:400px">
               <table>
                 <tr>
-                  <td>Provincia:</td>
-                  <td><input type='text' id='fd_provincia' ></td>
+                  <td><span class="label_itinerario">Provincia:</span></td>
+                  <td><input class="input_itinerario" type="text" id="fd_provincia"></td>
                 </tr>
                 <tr>
-                  <td>Comune:</td>
-                  <td><input type='text' id='fd_comune' ></td>
+                  <td><span class="label_itinerario">Comune:</span></td>
+                  <td><input class="input_itinerario" type="text" id="fd_comune" ></td>
                 </tr>
                 <tr>
-                  <td>Via:</td>
-                  <td><input type='text' id='fd_via' > <br></td>
+                  <td><span class="label_itinerario">Via:</span></td>
+                  <td><input class="input_itinerario" type="text" id="fd_via" ></td>
                 </tr>
               </table>
-              <input type='submit' value='Mostra percorso'>
-              <input type='button' value='Cancella percorso' onClick='cancella_percorso();'>
+              <div id="pulsanti" style="position:relative; top:10px; left:75px;">
+                <input class="button" type="submit" value='Mostra percorso' style="width:125px;">
+                <input class="button" type='button' value='Cancella percorso' style="width:125px;" onClick='cancella_percorso();'>
+              </div>
             </div>
-            <div id="percorso"></div>
-          </form>
-          <div id="mappa" style="width:100%;height:400px;"></div>
-        </div>
-        <div id="sc_image"></div>
+          </div>
+          <div id="percorso"></div>
+        </form>
+      </div>
+      <div id="sc_image"></div>
     </div>
 <?php  require_once 'finish.php'?>
