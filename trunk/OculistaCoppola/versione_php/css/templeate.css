@@ -80,7 +80,6 @@ div#testo_pagina_corrente td{
 }
 #bottom_menubar{
   padding-top:20px;
-  text-align:center;
   font:12px arial;
 }
 #contenuto{
@@ -366,8 +365,6 @@ input.button{
 #dati_provenienza tr{
   margin-bottom:10px;
 }
-
-
 
 
 
