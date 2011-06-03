@@ -44,11 +44,11 @@
               <table>
                 <tr>
                   <td><span class="label_itinerario">Provincia:</span></td>
-                  <td><input class="input_itinerario" type="text" id="fd_provincia"></td>
+                  <td><input class="input_itinerario" name="provincia" type="text" id="fd_provincia"></td>
                 </tr>
                 <tr>
                   <td><span class="label_itinerario">Comune:</span></td>
-                  <td><input class="input_itinerario" type="text" id="fd_comune" ></td>
+                  <td><input class="input_itinerario" type="text" name="comune" id="fd_comune" ></td>
                 </tr>
                 <tr>
                   <td><span class="label_itinerario">Via:</span></td>
@@ -56,16 +56,34 @@
                 </tr>
               </table>
               <div id="pulsanti" style="position:relative; top:10px; left:75px;">
-                <input class="button" type="submit" value='Mostra percorso' style="width:125px;">
+                <input id="mostra_percorso" class="button" type="submit" value='Mostra percorso' style="width:125px;">
                 <input class="button" type='button' value='Cancella percorso' style="width:125px;" onClick='cancella_percorso();'>
               </div>
             </div>
           </div>
+          <div id="printed">
+            <h2>Itinerario per raggiungere lo studio del Dott.Coppola</h2>
+          </div>
           <div id="percorso">
-            <a onclick="window.print();" href="javascript:;">Stampa</a>
+            <div id="stampa_button" style="display:none; cursor:pointer; position:relative; width:150px; left:700px" onclick="stampa()">
+              <span>Stampa Itinerario</span>
+              <img src="img/print.png" alt="Logo Stampa">
+            </div>
           </div>
         </form>
       </div>
       <div id="sc_image"></div>
     </div>
+    <script type="text/javascript">
+      $('#mostra_percorso').click(function(){
+        $('#stampa_button').delay('500').fadeIn();
+      });
+      function stampa()
+      {
+        comune = $("input[name=comune]").val();
+        provincia = $("input[name=provincia]").val();
+        $('#printed').append('<strong>Partenza da: '+comune+' ('+provincia+')</strong>');
+        window.print();
+      }
+    </script>
 <?php  require_once 'finish.php'?>
