@@ -12,72 +12,39 @@
             <img src="img/contatti.png" />
         </div>
         <div id="testo_pagina_corrente" style="width:860px">
-            <p>Il Dott.Coppola  <b>riceve per appuntamento</b>.</p>
-            <br \>
-            <div class="input_text" style="width:auto; height:auto;">
+            <p>Il Dott.Coppola Salvatore <strong>riceve per appuntamento</strong>.</p>
+            <div class="input_text" style="width:370px; height:auto; position:absolute; top:224px; left:470px">
               <table>
                 <tr>
-                  <td>
-                    <img src="img/homejob.png" alt="Indirizzo Studio" /> Indirizzo Studio
+                  <td style="width:40px; height:40px">
+                    <img src="img/phone_studio.png" alt="Telefono Studio" />
                   </td>
-                  <td>Contrada Sant'Eustacchio n.1, Avellino 83100</td>
+                  <td> Telefono Studio</td>
+                  <td class="info_contatti">0825/22641</td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="img/phone_studio.png" alt="Telefono Studio" /> Telefono Studio
+                    <img src="img/cellphone.png" alt="Cellulare" />
                   </td>
-                  <td>0825/22641</td>
+                  <td> Cellulare (Tre)</td>
+                  <td class="info_contatti">3356298388</td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="img/cellphone.png" alt="Cellulare" /> Cellulare (Tre)
+                    <img src="img/cellphone.png" alt="Cellulare" />
                   </td>
-                  <td>3356298388</td>
+                  <td> Cellulare (Wind)</td>
+                  <td class="info_contatti">3293036057</td>
                 </tr>
                 <tr>
                   <td>
-                    <img src="img/cellphone.png" alt="Cellulare" /> Cellulare (Wind)
+                    <img src="img/at.png" alt="Email" />
                   </td>
-                  <td>3293036057</td>
-                </tr>
-                <tr>
-                  <td>
-                    <img src="img/at.png" alt="Email" /> Email
-                  </td>
-                  <td>oculistacoppola@yahoo.it</td>
+                  <td> Email</td>
+                  <td class="info_contatti">oculistacoppola@yahoo.it</td>
                 </tr>
               </table>
             </div>
-            <table>
-                <tr>
-                    <td>
-                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
-                    </td>
-                    <td width="40%">Studio</td>
-                    <td>0825 22641</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
-                    </td>
-                    <td width="35%">Cellulare (Tre)</td>
-                    <td>3356298388</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
-                    </td>
-                    <td width="40%">Cellulare (Wind)</td>
-                    <td>3293036057</td>
-                </tr>
-                <tr>
-                    <td>
-                        <img src="img/logo.gif" alt="Logo Salvatore Coppola" style="width:37.5px; height:18.75px;">
-                    </td>
-                    <td width="40%">E-mail</td>
-                    <td>oculistacoppola@yahoo.it</td>
-                </tr>
-            </table>
             <p>
               Per maggiori informazioni potete lasciarci un messaggio compilando i seguenti campi: <br />
               <span style="font-style:italic; font-size:11px">* Indica che il campo è obbligatorio</span>

@@ -46,7 +46,11 @@ body{
   z-index:1;
 }
 #titolo_pagina_corrente{
-  width:120px;
+  width:209px;
+  height:35px;
+}
+.titolo_pagina_corrente{
+  width:209px;
   height:35px;
 }
 #testo_pagina_corrente{
@@ -59,7 +63,6 @@ body{
   text-align:justify;
 }
 div#testo_pagina_corrente td{
-  vertical-align:top;
   padding-right:5px;
 }
 #sc_image{
@@ -83,7 +86,8 @@ div#testo_pagina_corrente td{
 #contenuto{
   width:880px;
   position:relative;
-  background-image:url('../img/bg.png');
+  background-color:white;
+  /*background-image:url('../img/bg.png');*/
   left:-10px;
   top:15px;
   padding-top:30px;
@@ -301,6 +305,12 @@ input.testo_input{
   padding-left:3px;
   margin-bottom:15px;
 }
+.input_text td{
+  padding-left:10px;
+}
+.info_contatti{
+  font-weight:bold;
+}
 .testo_messaggio{
   width:300px;
   height:100px;
@@ -340,6 +350,22 @@ input.button{
 }
 .logo_contatti{
   
+}
+.input_itinerario{
+  width:260px;
+  height:25px;
+  padding-left:10px;
+  border:none;
+  -webkit-border-radius: 7px 7px 7px 7px;
+  -moz-border-radius: 7px 7px 7px 7px;
+  border-radius: 7px 7px 7px 7px;
+}
+.label_itinerario{
+  font-size:14pt;
+  font-family: 'The Girl Next Door', arial, serif;
+}
+#dati_provenienza tr{
+  margin-bottom:10px;
 }
 
 
