@@ -22,3 +22,12 @@
 #bottom{
   display:none;
 }
+#printed{
+  visibility:visible;
+}
+#box_itinerario{
+  display:none;
+}
+#stampa_button{
+  display:none;
+}
