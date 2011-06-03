@@ -5,6 +5,7 @@
     <head>
         <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
+       <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
         <script type="text/javascript" src="js/googlemaps.js"></script>
         <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRJPr4OMGDUGsod9sPZI3M-yok19hRLVJAtVPmSr3Kfx0_6Jg862MkRaQ" type="text/javascript"></script>
         <script type="text/javascript">
@@ -20,6 +21,7 @@
                 GUnload();
             }
         </script>
+      <script type="text/javascript" src="js/print_section.js"></script>
         <title>Dove sono | Dott.Salvatore Coppola - Oculista</title>
         <meta name="description" content="Informazioni per raggiungere lo studio del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
@@ -59,7 +61,9 @@
               </div>
             </div>
           </div>
-          <div id="percorso"></div>
+          <div id="percorso">
+            <a onclick="window.print();" href="javascript:;">Stampa</a>
+          </div>
         </form>
       </div>
       <div id="sc_image"></div>

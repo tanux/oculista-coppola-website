@@ -13,7 +13,7 @@
         <div id="testo_pagina_corrente" style="width:860px">
             <table>
                 <tr>
-                    <td>
+                    <td style="vertical-align:top">
                         <div id="wiki_thumbnail">
                             <img src="img/rand_image.jpg" alt="Un'immagine di Salvatore Coppola" style="width:220px; height:275px;">
                             <div>Salvatore Coppola</div>
