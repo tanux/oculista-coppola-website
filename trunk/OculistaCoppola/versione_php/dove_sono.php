@@ -5,7 +5,8 @@
     <head>
         <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-       <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
+        <link href="css/jquery.autocomplete.css" rel=”stylesheet” type=”text/css” />
+        <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
         <script type="text/javascript" src="js/googlemaps.js"></script>
         <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRJPr4OMGDUGsod9sPZI3M-yok19hRLVJAtVPmSr3Kfx0_6Jg862MkRaQ" type="text/javascript"></script>
         <script type="text/javascript">
@@ -63,6 +64,7 @@
           </div>
           <div id="printed">
             <h2>Itinerario per raggiungere lo studio del Dott.Coppola</h2>
+            <strong id="info_start"></strong>
           </div>
           <div id="percorso">
             <div id="stampa_button" style="display:none; cursor:pointer; position:relative; width:150px; left:700px" onclick="stampa()">
@@ -74,7 +76,13 @@
       </div>
       <div id="sc_image"></div>
     </div>
+    <script type=”text/javascript” src="js/jquery.bgiframe.min.js"></script>
+    <script type=”text/javascript” src="js/jquery.autocomplete.min.js"></script>
     <script type="text/javascript">
+      /*$(document).ready(function(){
+        var data = 'Salerno, Napoli, Avellino'.split(',');
+        $('#fd_provincia').autocomplete(data);
+      });*/
       $('#mostra_percorso').click(function(){
         $('#stampa_button').delay('500').fadeIn();
       });
@@ -82,7 +90,7 @@
       {
         comune = $("input[name=comune]").val();
         provincia = $("input[name=provincia]").val();
-        $('#printed').append('<strong>Partenza da: '+comune+' ('+provincia+')</strong>');
+        $('#info_start').html('Partenza da: '+comune+' ('+provincia+')');
         window.print();
       }
     </script>
