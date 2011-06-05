@@ -367,6 +367,7 @@ input.button{
 }
 
 #printed{
-  visibility:hidden;
+  display:none;
 }
+
 
