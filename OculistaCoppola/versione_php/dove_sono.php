@@ -5,7 +5,6 @@
     <head>
         <link href='http://fonts.googleapis.com/css?family=Swanky+and+Moo+Moo' rel='stylesheet' type='text/css'>
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
-        <link href="css/jquery.autocomplete.css" rel=”stylesheet” type=”text/css” />
         <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
         <script type="text/javascript" src="js/googlemaps.js"></script>
         <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRJPr4OMGDUGsod9sPZI3M-yok19hRLVJAtVPmSr3Kfx0_6Jg862MkRaQ" type="text/javascript"></script>
@@ -57,8 +56,8 @@
                 </tr>
               </table>
               <div id="pulsanti" style="position:relative; top:10px; left:75px;">
-                <input id="mostra_percorso" class="button" type="submit" value='Mostra percorso' style="width:125px;">
-                <input class="button" type='button' value='Cancella percorso' style="width:125px;" onClick='cancella_percorso();'>
+                <input id="mostra_percorso" class="button" type="submit" value='Mostra percorso' style="width:125px;" />
+                <input id="cancella_percorso" class="button" type='button' value='Cancella percorso' style="width:125px;" />
               </div>
             </div>
           </div>
@@ -76,15 +75,14 @@
       </div>
       <div id="sc_image"></div>
     </div>
-    <script type=”text/javascript” src="js/jquery.bgiframe.min.js"></script>
-    <script type=”text/javascript” src="js/jquery.autocomplete.min.js"></script>
     <script type="text/javascript">
-      /*$(document).ready(function(){
-        var data = 'Salerno, Napoli, Avellino'.split(',');
-        $('#fd_provincia').autocomplete(data);
-      });*/
       $('#mostra_percorso').click(function(){
         $('#stampa_button').delay('500').fadeIn();
+      });
+      $('#cancella_percorso').click(function(){
+        cancella_percorso();
+        $('#stampa_button').hide();
+        $('.input_itinerario').val('');
       });
       function stampa()
       {
