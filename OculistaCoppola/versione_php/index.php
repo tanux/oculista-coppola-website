@@ -1,3 +1,13 @@
+<?php
+require_once 'phpFlickr/phpFlickr.php';
+$api_key = '767ae19556d2c879b81318eff5aa2467';
+$secret = '84e7befb716ad97f';
+$user_id = '61365587@N08';
+$die_on_error = false;
+$flickr = new phpFlickr($api_key,$secret,$die_on_error);
+//$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
+$photosets = $flickr->photosets_getList($user_id);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,10 +28,24 @@
         </div>
         <div id="content_box_news">
             <div id="box_news_immagini" class="box_news">
-                <div class="titolo_box_news">Nuovi Video</div>
+                <div class="titolo_box_news">Nuove Immagini</div>
+                <div class="news"style="position: relative; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">
+                  <ul style="padding-left:20px; line-height:30px">
+                    <?php
+                      for($i=0; $i<4; $i++){
+                        $id = $photosets['photoset'][$i]['id'];
+                        $nome_album = $photosets['photoset'][$i]['title'];
+                    ?>
+                        <li type="circle" style="font-family:verdana; font-size:12px">Nuovo album:<strong><a href="immagini.php#<?php echo $id?>"><?php echo $nome_album?></a></strong>
+                    <?php
+                      }
+                    ?>
+                  </ul>
+                </div>
             </div>
             <div id="box_news_video" class="box_news">
-                <div class="titolo_box_news">Nuove Immagini</div>
+                <div class="titolo_box_news">Nuovi Video</div>
+                <div class="news"style="position: relative; border: 1px solid; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">Notizia 1</div>
             </div>
         </div>
 <?php  require_once 'finish.php'?>
