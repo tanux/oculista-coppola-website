@@ -43,7 +43,9 @@ $photosets = $flickr->photosets_getList($user_id);
                   <?php echo $nome_photoset?>
                 </div>
                 <div class="info_album" style="font-family:Verdana; font-size:10px; width:200px; position:relative; top:-370px; left:206px">
-                  <div class="nome" style="font-weight:bold; font-size:12px"><?php echo $nome_photoset?></div>
+                  <div class="nome" style="font-weight:bold; font-size:12px">
+                   <a href="#<?php echo $id_photoset?>"> <?php echo $nome_photoset?></a>
+                  </div>
                   <hr />
                   <div class="descrizione"><?php echo $photoset['description']?></div>
                   <div class="data">Data creazione:<?php echo $photoset['date_create']?> </div>
