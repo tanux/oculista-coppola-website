@@ -1,6 +1,6 @@
 <?php
 require_once('youtube.php');
-$feedURL = "http://gdata.youtube.com/feeds/api/videos?q=DottCoppolaVideo&key=AI39si6UrXS3Cqff8ehVvFhiXmx48Dpny4iAlR2B_FYVl4GEHrvznUQEI_NIgjhiGg93sjCzTjmC0KywrSyMIefh5BBiGfB3zg";
+$feedURL = "http://gdata.youtube.com/feeds/api/videos?q=DottCoppolaVideo";
 $sxml = simplexml_load_file($feedURL);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -56,7 +56,9 @@ $sxml = simplexml_load_file($feedURL);
                   </a>
                 </div>
                 <div class="info_album" style="font-family:Verdana; font-size:10px; width:180px; position:relative; top:-388px; left:240px">
-                  <div class="nome" style="font-weight:bold; font-size:12px"><?php echo $titolo?></div>
+                  <div class="nome" style="font-weight:bold; font-size:12px">
+                   <a href="#<?php echo $url?>"> <?php echo $titolo?> </a>
+                  </div>
                   <hr />
                   <div class="descrizione"><?php echo $descrizione?></div>
                 </div>
