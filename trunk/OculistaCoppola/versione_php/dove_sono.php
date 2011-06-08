@@ -7,7 +7,7 @@
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
         <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
         <script type="text/javascript" src="js/googlemaps.js"></script>
-        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRJPr4OMGDUGsod9sPZI3M-yok19hRLVJAtVPmSr3Kfx0_6Jg862MkRaQ" type="text/javascript"></script>
+        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRNYmDeuv6z6FnMyG9gQaci5oEeRxQ9qgSo2wCOu66XCV921G-B-WbQiA" type="text/javascript"></script>
         <script type="text/javascript">
             window.onload = function(){
                 var idMap = 'mappa';

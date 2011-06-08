@@ -7,6 +7,10 @@ $die_on_error = false;
 $flickr = new phpFlickr($api_key,$secret,$die_on_error);
 //$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
 $photosets = $flickr->photosets_getList($user_id);
+
+require_once('youtube.php');
+$feedURL = "http://gdata.youtube.com/feeds/api/videos?q=DottCoppolaVideo&key=AI39si6UrXS3Cqff8ehVvFhiXmx48Dpny4iAlR2B_FYVl4GEHrvznUQEI_NIgjhiGg93sjCzTjmC0KywrSyMIefh5BBiGfB3zg";
+$sxml = simplexml_load_file($feedURL);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
@@ -45,7 +49,28 @@ $photosets = $flickr->photosets_getList($user_id);
             </div>
             <div id="box_news_video" class="box_news">
                 <div class="titolo_box_news">Nuovi Video</div>
-                <div class="news"style="position: relative; border: 1px solid; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">Notizia 1</div>
+                <div class="news"style="position: relative; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">
+                  <ul style="padding-left:20px; line-height:30px">
+                    <?php
+                      $i=0;
+                      foreach ($sxml->entry as $entry){
+                        $media = $entry->children('http://search.yahoo.com/mrss/');
+                        $attrs = $media->group->player->attributes();
+                        $url = $attrs['url'];
+                        $video = YoutubeDataApi::getVideoResponse($url);
+                        $titolo = $video->getTitle();
+                        $thumbnails = $video->getThumbnails();
+                        $thumbnail = $thumbnails[0]['url'];
+                        $i++;
+                        if ($i>4)
+                          continue;
+                    ?>
+                        <li type="circle" style="font-family:verdana; font-size:12px">Nuovo video:<strong><a href="video.php#<?php echo $url?>"><?php echo $titolo?></a></strong>
+                    <?php
+                      }
+                    ?>
+                  </ul>
+                </div>
             </div>
         </div>
 <?php  require_once 'finish.php'?>
