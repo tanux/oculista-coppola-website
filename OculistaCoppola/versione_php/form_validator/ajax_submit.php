@@ -26,7 +26,7 @@ $message =  "<html>
             </body>
             </html>";
 $message = str_replace("\\", "",$message);
-$destinatario = "mariosperanza88@gmail.com";
+$destinatario = "espositogaetano87@gmail.com";
 
 $arrayToJs = array();
 if (mail($destinatario,$oggetto,$message,$headers))

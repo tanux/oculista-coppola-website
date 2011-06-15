@@ -7,14 +7,14 @@
         <meta name="description" content="Biografia del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-        <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif');"></div>
+        <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -37px"></div>
         <div id="testo_pagina_corrente" style="width:860px">
             <table>
                 <tr>
                     <td style="vertical-align:top">
                         <div id="wiki_thumbnail">
                             <img src="img/coppola_web.gif" alt="Un'immagine di Salvatore Coppola" style="width:220px; height:275px;">
-                            <div>Salvatore Coppola</div>
+                            <div>Dott.Coppola Salvatore</div>
                         </div>
                     </td>
                     <td>
