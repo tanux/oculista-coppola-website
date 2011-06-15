@@ -60,7 +60,7 @@
               <div class="input_text">
                 <input class="validate[required,custom[italian_phone],funcCall[checkin]] testo_input" type="text" id="telefono" name="telefono" value="Es: 0811234567 o 33912345678" title="Es: 0811234567 o 33912345678" />
               </div>
-              <label class="label_contatti">Email</label>
+              <label class="label_contatti">Email *</label>
               <div class="input_text">
                 <input class="validate[custom[email],funcCall[checkin]] testo_input" type="text" id="email" name="email" value="Es: miaemail@sito.it" title="Es: miaemail@sito.it" />
               </div>
