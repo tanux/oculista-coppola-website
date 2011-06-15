@@ -17,9 +17,7 @@ $photosets = $flickr->photosets_getList($user_id);
         <meta name="description" content="Immagini del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-      <div id="titolo_pagina_corrente">
-        <img src="img/immagini.png" />
-      </div>
+      <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -73px"></div>
       <div id="testo_pagina_corrente" style="padding-bottom:35px">
         <div class="cleared">
           <?php

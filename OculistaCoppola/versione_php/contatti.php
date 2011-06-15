@@ -8,9 +8,7 @@
         <meta name="description" content="Informazioni per contattare il Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-        <div id="titolo_pagina_corrente">
-            <img src="img/contatti.png" />
-        </div>
+        <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -144px"></div>
         <div id="testo_pagina_corrente" style="width:860px">
             <p>Il Dott.Coppola Salvatore <strong>riceve per appuntamento</strong>.</p>
             <div class="input_text" style="width:370px; height:auto; position:absolute; top:224px; left:470px">
@@ -72,7 +70,7 @@
               </div>
               <label>
                 <input class="validate[required,funcCall[checked]]" type="checkbox" id="consenso" name="consenso" style="display:inline;" />
-                <span>Autorizzo il trattamento dei dati personali secondo il <a href="privacy.php">D.Lgs 196/2003</a></span>
+                <span>Autorizzo il trattamento dei dati personali secondo il <a href="note_legali.php">D.Lgs 196/2003</a></span>
               </label>
               <br />
               <input class="button" type="submit" value="Invia" />

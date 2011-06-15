@@ -8,7 +8,7 @@
                     <a href="video.php">Video</a> |
                     <a href="contatti.php">Contatti</a> |
                     <a href="dove_sono.php">Dove Sono</a> |
-                    <a href="privacy.php">Privacy</a> |
+                    <a href="note_legali.php">Note Legali</a> |
                     <a href="sitemap.php">Mappa Sito</a>
                     <span style="float:right;">
                       Design & Developer:

@@ -26,14 +26,14 @@
         <meta name="description" content="Informazioni per raggiungere lo studio del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-      <div class="titolo_pagina_corrente" style="background-image:url('img/dove_sono.png')"></div>
+      <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -180px"></div>
       <br />
       <div id="testo_pagina_corrente" style="width:97%">
         <span style="font-weight:bold;">Sede dello Studio:</span> Contrada Sant'Eustacchio, n.1 - 83100, Avellino
         <br /><br />
         <div id="mappa" style="width:90%;height:400px;margin:0 auto; margin-bottom:10px"></div>
         <br />
-        <div class="titolo_pagina_corrente" style="background-image:url('img/dove_sono.png'); background-position:0px -35px"></div>
+        <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -217px; height:35px"></div>
         <br />
         <form id="dati_provenienza" action='#mappa' onSubmit='showDirection(); return false;'>
           <div id="box_itinerario" style="background-image:url('img/bg_itinerario.jpg'); width:748px; height:236px; margin:0 auto;">

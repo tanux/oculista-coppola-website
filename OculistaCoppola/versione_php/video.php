@@ -26,9 +26,7 @@ $sxml = simplexml_load_file($feedURL);
         <meta name="description" content="Video del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
-      <div id="titolo_pagina_corrente">
-        <img src="img/video.png" />
-      </div>
+      <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -108px"></div>
       <div id="testo_pagina_corrente">
         <div class="cleared">
           <?php            
