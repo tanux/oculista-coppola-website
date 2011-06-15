@@ -3,14 +3,13 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <title>Privacy | Dott.Salvatore Coppola - Oculista</title>
+  <title>Note Legali | Dott.Salvatore Coppola - Oculista</title>
   <meta name="description" content="Informazioni per contattare il Dott.Salvatore Coppola, oculista di avellino" />
   <?php   require_once 'init.php'; ?>
 <div id="contenuto">
   <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -253px;"></div>
   <div id="testo_pagina_corrente" style="width:860px">
     <p><h1 align=center><b><i>Informativa per il trattamento dei dati.</i></b></h1></p>
-
     Per procedere con l'invio dei vostri dati personali dovete <b>leggere e accettare</b> questa informativa sulle modalita' di trattamento dei dati personali. Siete liberi di non concedere il consenso al trattamento, ma in questo caso non potremo dare corso alla registrazione.<br><br>
     <b>I vostri dati personali ci verranno effettivamente trasmessi solo dopo il vostro consenso al trattamento.</b> <br><br>Ai sensi dell'<i>Art. 13 del D.Lgs. 196/2003</i> (Codice in materia di protezione dei dati personali), la nostra azienda, in qualita' di titolare del trattamento, desidera informarvi che i dati, raccolti direttamente ed esclusivamente dagli interessati mediante la compilazione del modulo, sono trattati in ottemperanza alla vigente normativa in materia di sicurezza. Ogni responsabilita', civile e penale, per aver fornito informazioni false, mendaci, non in buona fede o comunque diverse dalla verita' e' <b>a totale carico di chi le ha fornite</b> e nessuna responsabilita' potra' quindi essere attribuita alla nostra azienda.<br><br>
     <b><h2>Finalita' del trattamento</h2></b>
