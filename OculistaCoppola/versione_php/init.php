@@ -16,6 +16,7 @@ if ($d) {
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="keywords" lang="it" content="oculista,specialista,avellino,salvatore,coppola,dottore,oculistica" />
     <meta name="author" content="Esposito Gaetano" />
+    <link rel="shortcut icon" href="img/favicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" href="css/templeate.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/barra_navigazione.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/slideshow.css" type="text/css" media="screen" />
