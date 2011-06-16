@@ -32,7 +32,7 @@ $sxml = simplexml_load_file($feedURL);
 <?php   require_once 'init.php'; ?>
         <div id="contenuto">
             <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif')"></div>
-            <div id="testo_pagina_corrente" style="width:395px; float:left; font-size:15px; padding-bottom:55px">
+            <div id="testo_pagina_corrente" style="width:395px; float:left; font-size:15px; padding-bottom:0px">
               oculistacoppola.it nasce dall’idea del Dott.Coppola Salvatore  di condividere le sue
               esperienze e far conoscere il proprio lavoro su larga scala, attraverso l’utilizzo del web.
               <br /><br />
