@@ -1,5 +1,4 @@
 <?php
-//Caricamento dei file *.jpg per slider header
 $filter = ".jpg";
 $directory = "img/slider";
 @$d = dir($directory);
