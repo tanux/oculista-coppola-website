@@ -43,49 +43,7 @@ $sxml = simplexml_load_file($feedURL);
               del servizio di chirurgia oculare presso la struttura ospedaliera di Sant’Angelo dei Lombardi.
             </div>
             <div id="thumb_coppola" style="width:474px; height:329px; margin-left:405px;background-image:url('img/thumb_home.png')"></div>
-            <div id="content_box_news">
-              <div id="box_news_immagini" class="box_news">
-                  <div class="titolo_box_news">Nuove Immagini</div>
-                  <div class="news"style="position: relative; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">
-                    <ul>
-                      <?php
-                        for($i=0; $i<4; $i++){
-                          $id = $photosets['photoset'][$i]['id'];
-                          $nome_album = $photosets['photoset'][$i]['title'];
-                      ?>
-                          <li><strong><a href="immagini.php#<?php echo $id?>"><?php echo $nome_album?></a></strong>
-                      <?php
-                        }
-                      ?>
-                    </ul>
-                  </div>
-              </div>
-              <div id="box_news_video" class="box_news">
-                  <div class="titolo_box_news">Nuovi Video</div>
-                  <div class="news" style="position: relative; margin-left: 10px; width: 248px; margin-top: 45px; height: 120px;">
-                    <ul>
-                      <?php
-                        $i=0;
-                        foreach ($sxml->entry as $entry){
-                          $media = $entry->children('http://search.yahoo.com/mrss/');
-                          $attrs = $media->group->player->attributes();
-                          $url = $attrs['url'];
-                          $video = YoutubeDataApi::getVideoResponse($url);
-                          $titolo = $video->getTitle();
-                          $thumbnails = $video->getThumbnails();
-                          $thumbnail = $thumbnails[0]['url'];
-                          $i++;
-                          if ($i>4)
-                            continue;
-                      ?>
-                          <li><strong><a href="video.php#<?php echo $url?>"><?php echo $titolo?></a></strong>
-                      <?php
-                        }
-                      ?>
-                    </ul>
-                  </div>
-              </div>
-            </div>
+           
             <div id="sc_image"></div>
         </div>
 <?php  require_once 'finish.php'?>

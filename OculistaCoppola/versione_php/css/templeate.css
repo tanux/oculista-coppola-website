@@ -67,6 +67,7 @@ div#testo_pagina_corrente td{
   left:355px;
   width:219px;
   height:79px;
+  margin-top:20px;
   background-image:url('../img/sc_image.png');
 }
 #bottom_menubar{
