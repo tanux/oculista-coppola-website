@@ -14,13 +14,13 @@ if ($d) {
 }
 ?>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="keywords" lang="it" content="oculista,specialista,avellino,salvatore,coppola,dottore,oculistica" />
+    <meta name="keywords" lang="it" content="oculista,specialista,avellino,salvatore,coppola,dottore,oculistica,ottica,oftalmologia,cataratta,occhiali" />
     <meta name="author" content="Esposito Gaetano" />
     <link rel="shortcut icon" href="img/favicon.gif" type="image/x-icon"/>
     <link rel="stylesheet" href="css/templeate.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/barra_navigazione.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="css/slideshow.css" type="text/css" media="screen" />
-    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css' media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie&text=Dott.CoppolaSalvatore' rel='stylesheet' type='text/css' media="screen">
     <link href='http://fonts.googleapis.com/css?family=League+Script' rel='stylesheet' type='text/css'>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js" type="text/javascript"></script>
     <script src="http://cdn.jquerytools.org/1.2.5/full/jquery.tools.min.js"></script>
@@ -38,7 +38,7 @@ if ($d) {
 <div id="content_all">
     <div id="sfondo_header"></div>
     <div id="testo_header">
-        <div id="titolo">Dottor Salvatore Coppola</div>
+        <div id="titolo">Dott.Coppola Salvatore</div>
         <div id="sottotitolo">Oculista - Avellino</div>
     </div>
     <ul class="lavaLampBottomStyle" id="tre">
