@@ -3,6 +3,22 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
+        <style type="text/css">
+          .loghi_contatti{
+            width:30px;
+            height:40px;
+            background:url("img/loghi_contatti.png");
+            background-repeat:no-repeat;
+          }
+          #positive_response{
+            display:none;
+            position:relative;
+            top:-30px;
+            left:210px;
+            width:35%;
+            background-position:0 -135px;
+          }
+        </style>
         <link rel="stylesheet" href="form_validator/css/validationEngine.jquery.css" type="text/css"/>
         <title>Contatti | Dott.Salvatore Coppola - Oculista</title>
         <meta name="description" content="Informazioni per contattare il Dott.Salvatore Coppola, oculista di avellino" />
@@ -14,30 +30,22 @@
             <div class="input_text" style="width:370px; height:auto; position:absolute; top:224px; left:470px">
               <table>
                 <tr>
-                  <td style="width:40px; height:40px">
-                    <img src="img/phone_studio.png" alt="Telefono Studio" />
-                  </td>
+                  <td class="loghi_contatti"></td>
                   <td> Telefono Studio</td>
                   <td class="info_contatti">0825/22641</td>
                 </tr>
                 <tr>
-                  <td>
-                    <img src="img/cellphone.png" alt="Cellulare" />
-                  </td>
+                  <td class="loghi_contatti" style="background-position: 0px -50px;"></td>
                   <td> Cellulare (Tre)</td>
                   <td class="info_contatti">3356298388</td>
                 </tr>
                 <tr>
-                  <td>
-                    <img src="img/cellphone.png" alt="Cellulare" />
-                  </td>
+                  <td class="loghi_contatti" style="background-position: 0px -50px;"></td>
                   <td> Cellulare (Wind)</td>
                   <td class="info_contatti">3293036057</td>
                 </tr>
                 <tr>
-                  <td>
-                    <img src="img/at.png" alt="Email" />
-                  </td>
+                  <td class="loghi_contatti" style="background-position: 0px -92px;"></td>
                   <td> Email</td>
                   <td class="info_contatti">oculistacoppola@yahoo.it</td>
                 </tr>
@@ -73,13 +81,14 @@
                 <span>Autorizzo il trattamento dei dati personali secondo il <a href="note_legali.php">D.Lgs 196/2003</a></span>
               </label>
               <br />
-              <input class="button" type="submit" value="Invia" />
+              <input id="invia" class="button" type="submit" value="Invia" />
               <input class="button" type="button" value="Cancella" onclick="reset_field()"/>
-              <img id="waitgif" src="img/loader_contatti.gif" alt="Attesa risposta" style="display:none;" />
-              <span id="positive_response" style="display:none;">
-                <img src="img/ok_32x32.png" alt="Messaggio inviato" />
-                Il messaggio è stato inviato correttamente.
-              <span>
+              <img id="waitgif" src="img/loader_contatti.gif" alt="Attesa risposta" style="display:none; margin-left:15px;" />
+              <div id="positive_response" class="loghi_contatti">
+                <span style="position: relative; top: 10px; left: 35px;">
+                  Il messaggio è stato inviato correttamente.
+                </span>
+              </div>
             </form>
         </div>
         <div id="sc_image"></div>
@@ -106,6 +115,7 @@
         if (status === true) {
           $('#waitgif').hide();
           $('#positive_response').show();
+          $('input[type=submit]').attr('disabled', 'disabled');
         }
       }
       function reset_field(){
