@@ -3,8 +3,6 @@ $nome      =  trim($_GET['nome']);
 $cognome   =  trim($_GET['cognome']);
 $telefono  =  trim($_GET['telefono']);
 $email     =  trim($_GET['email']);
-if (empty($email))
-  $email = "L'utente non ha specificato un indirizzo email";
 $messaggio =  trim(htmlspecialchars($_GET['messaggio']));
 
 $oggetto = "Messaggio inviato da www.oculistacoppola.it";
@@ -16,13 +14,14 @@ $message =  "<html>
                     <title> $oggetto </title>
                 </head>
             <body>
+                Un utente ha inviato un messaggio usando la pagina Contatti del sito.
                 <p>----------------------------------------</p>
+                <u><b>Dati Utente</b></u><br />
                 <b>Nome e Cognome:</b> $nome $cognome<br />
                 <b>Recapito Telefonico:</b> $telefono<br />
                 <b>Email:</b> $email<br />
-                <b>Testo del messaggio:</b><br />
-                <p>$messaggio</p>
                 <p>----------------------------------------</p>
+                <b>Testo del messaggio:</b><br />$messaggio
             </body>
             </html>";
 $message = str_replace("\\", "",$message);

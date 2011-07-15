@@ -7,7 +7,7 @@
         <link href='http://fonts.googleapis.com/css?family=The+Girl+Next+Door' rel='stylesheet' type='text/css'>
         <link href='css/print.css' rel='stylesheet' type='text/css' media="print">
         <script type="text/javascript" src="js/googlemaps.js"></script>
-        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BRNYmDeuv6z6FnMyG9gQaci5oEeRxQ9qgSo2wCOu66XCV921G-B-WbQiA" type="text/javascript"></script>
+        <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAHfYocY9LRpi1Usy7qamz4BQlXS8n1cS3OCdVQt8Ve_eGU6PzghSAwq2PfkMvOp-DmkYl13rp8ImXQw" type="text/javascript"></script>
         <script type="text/javascript">
             window.onload = function(){
                 var idMap = 'mappa';
@@ -35,7 +35,7 @@
         <br />
         <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -217px; height:35px"></div>
         <br />
-        <form id="dati_provenienza" action='#mappa' onSubmit='showDirection(); return false;'>
+        <form id="dati_provenienza" action='#mappa'>
           <div id="box_itinerario" style="background-image:url('img/bg_itinerario.jpg'); width:748px; height:236px; margin:0 auto;">
             <input type='hidden' id='fd_stato' value="Italia" />
             <span id="titolo_itinerario" style="font-size:26pt;font-family: 'Swanky and Moo Moo', arial, serif; position:relative; top:10px; left:230px;">Calcola il tuo itinerario</span>
@@ -77,7 +77,15 @@
     </div>
     <script type="text/javascript">
       $('#mostra_percorso').click(function(){
-        $('#stampa_button').delay('500').fadeIn();
+        if ( $('#fd_via').val() === '' || $('#fd_comune').val() === '' || $('#fd_provincia').val() === ''){
+          alert("E' necessario compilare tutti i campi");
+          return false;
+        }
+        else{
+          $('#stampa_button').delay('500').fadeIn();
+          showDirection();
+          return false;
+        }
       });
       $('#cancella_percorso').click(function(){
         cancella_percorso();

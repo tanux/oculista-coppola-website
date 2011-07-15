@@ -1,20 +1,19 @@
-<?php
+?php
 require_once 'phpFlickr/phpFlickr.php';
 $api_key = '767ae19556d2c879b81318eff5aa2467';
 $secret = '84e7befb716ad97f';
 $user_id = '61365587@N08';
 $die_on_error = false;
 $flickr = new phpFlickr($api_key,$secret,$die_on_error);
-//$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@localhost/myoculistacoppola");
+//$flickr->enableCache("db", "mysql://oculistacoppola:mino4ever@mysql.netsons.com/myoculistacoppola");
 $photosets = $flickr->photosets_getList($user_id);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head>
-        <link href='http://fonts.googleapis.com/css?family=Reenie+Beanie' rel='stylesheet' type='text/css'>
-        <title>Immagini | Dott.Salvatore Coppola - Oculista</title>
-        <meta name="description" content="Immagini del Dott.Salvatore Coppola, oculista di avellino" />
+  <head>
+    <title>Immagini | Dott.Salvatore Coppola - Oculista</title>
+    <meta name="description" content="Immagini del Dott.Salvatore Coppola, oculista di avellino" />
 <?php   require_once 'init.php'; ?>
     <div id="contenuto">
       <div class="titolo_pagina_corrente" style="background-image:url('img/titoli_pagina.gif'); background-position:0px -73px"></div>
@@ -46,7 +45,6 @@ $photosets = $flickr->photosets_getList($user_id);
                   </div>
                   <hr />
                   <div class="descrizione"><?php echo $photoset['description']?></div>
-                  <div class="data">Data creazione:<?php echo $photoset['date_create']?> </div>
                   <div class="num_foto">Foto:<?php echo $photoset['photos']?></div>
                 </div>
               </div>

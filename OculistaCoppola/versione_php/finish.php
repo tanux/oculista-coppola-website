@@ -11,7 +11,7 @@
                     <a href="note_legali.php">Note Legali</a> |
                     <a href="sitemap.php">Mappa Sito</a>
                     <span style="float:right;">
-                      Design & Developer:
+                      Design & Developement:
                       <a target="_blank" href="http://www.linkedin.com/pub/mario-speranza/25/a10/253"> Mario Speranza</a> -
                       <a target="_blank" href="http://www.linkedin.com/pub/gaetano-esposito/24/8b/636">Esposito Gaetano</a>
                     </span>
@@ -30,4 +30,3 @@
         </script>
     </body>
 </html>
- 
